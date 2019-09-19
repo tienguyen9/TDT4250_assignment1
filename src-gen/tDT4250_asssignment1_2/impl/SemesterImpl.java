@@ -32,6 +32,7 @@ import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.impl.SemesterImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.impl.SemesterImpl#getSemester_course <em>Semester course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.impl.SemesterImpl#getCredits <em>Credits</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +67,26 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @ordered
 	 */
 	protected EList<Semester_Course> semester_course;
+
+	/**
+	 * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int CREDITS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected int credits = CREDITS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +147,28 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getCredits() {
+		return credits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCredits(int newCredits) {
+		int oldCredits = credits;
+		credits = newCredits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TDT4250_asssignment1_2Package.SEMESTER__CREDITS,
+					oldCredits, credits));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -147,6 +190,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 			return getNumber();
 		case TDT4250_asssignment1_2Package.SEMESTER__SEMESTER_COURSE:
 			return getSemester_course();
+		case TDT4250_asssignment1_2Package.SEMESTER__CREDITS:
+			return getCredits();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +212,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 			getSemester_course().clear();
 			getSemester_course().addAll((Collection<? extends Semester_Course>) newValue);
 			return;
+		case TDT4250_asssignment1_2Package.SEMESTER__CREDITS:
+			setCredits((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,6 +233,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 		case TDT4250_asssignment1_2Package.SEMESTER__SEMESTER_COURSE:
 			getSemester_course().clear();
 			return;
+		case TDT4250_asssignment1_2Package.SEMESTER__CREDITS:
+			setCredits(CREDITS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,6 +252,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 			return number != NUMBER_EDEFAULT;
 		case TDT4250_asssignment1_2Package.SEMESTER__SEMESTER_COURSE:
 			return semester_course != null && !semester_course.isEmpty();
+		case TDT4250_asssignment1_2Package.SEMESTER__CREDITS:
+			return credits != CREDITS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +271,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Number: ");
 		result.append(number);
+		result.append(", Credits: ");
+		result.append(credits);
 		result.append(')');
 		return result.toString();
 	}

@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.Program#getName <em>Name</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.Program#getSpecialization <em>Specialization</em>}</li>
- *   <li>{@link tDT4250_asssignment1_2.Program#getCourse <em>Course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.Program#getProgram_course <em>Program course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.Program#getCredits <em>Credits</em>}</li>
  * </ul>
  *
  * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getProgram()
@@ -60,15 +61,37 @@ public interface Program extends EObject {
 	EList<Specialization> getSpecialization();
 
 	/**
-	 * Returns the value of the '<em><b>Course</b></em>' containment reference list.
-	 * The list contents are of type {@link tDT4250_asssignment1_2.Course}.
+	 * Returns the value of the '<em><b>Program course</b></em>' containment reference list.
+	 * The list contents are of type {@link tDT4250_asssignment1_2.Program_course}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Course</em>' containment reference list.
-	 * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getProgram_Course()
+	 * @return the value of the '<em>Program course</em>' containment reference list.
+	 * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getProgram_Program_course()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Course> getCourse();
+	EList<Program_course> getProgram_course();
+
+	/**
+	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Credits</em>' attribute.
+	 * @see #setCredits(int)
+	 * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getProgram_Credits()
+	 * @model dataType="tDT4250_asssignment1_2.Program_credits"
+	 * @generated
+	 */
+	int getCredits();
+
+	/**
+	 * Sets the value of the '{@link tDT4250_asssignment1_2.Program#getCredits <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Credits</em>' attribute.
+	 * @see #getCredits()
+	 * @generated
+	 */
+	void setCredits(int value);
 
 } // Program

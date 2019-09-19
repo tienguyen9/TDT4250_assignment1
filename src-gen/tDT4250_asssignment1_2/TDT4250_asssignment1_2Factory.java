@@ -67,6 +67,15 @@ public interface TDT4250_asssignment1_2Factory extends EFactory {
 	Course createCourse();
 
 	/**
+	 * Returns a new object of class '<em>Program course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Program course</em>'.
+	 * @generated
+	 */
+	Program_course createProgram_course();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -101,6 +101,13 @@ public class TDT4250_asssignment1_2Switch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case TDT4250_asssignment1_2Package.PROGRAM_COURSE: {
+			Program_course program_course = (Program_course) theEObject;
+			T result = caseProgram_course(program_course);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -178,6 +185,21 @@ public class TDT4250_asssignment1_2Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCourse(Course object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Program course</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Program course</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProgram_course(Program_course object) {
 		return null;
 	}
 

@@ -7,6 +7,7 @@ import java.util.Calendar;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -14,7 +15,9 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tDT4250_asssignment1_2.Course;
+import tDT4250_asssignment1_2.Fall_or_spring;
 import tDT4250_asssignment1_2.Program;
+import tDT4250_asssignment1_2.Program_course;
 import tDT4250_asssignment1_2.Semester;
 import tDT4250_asssignment1_2.Semester_Course;
 import tDT4250_asssignment1_2.Specialization;
@@ -69,6 +72,20 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass program_courseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum fall_or_springEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType calendarEDataType = null;
 
 	/**
@@ -77,6 +94,20 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * @generated
 	 */
 	private EDataType course_codeEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType semester_creditsEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType program_creditsEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -182,8 +213,17 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgram_Course() {
+	public EReference getProgram_Program_course() {
 		return (EReference) programEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgram_Credits() {
+		return (EAttribute) programEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -218,6 +258,15 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSpecialization_Specialization() {
+		return (EReference) specializationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSemester() {
 		return semesterEClass;
 	}
@@ -245,6 +294,15 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSemester_Credits() {
+		return (EAttribute) semesterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSemester_Course() {
 		return semester_CourseEClass;
 	}
@@ -265,6 +323,15 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 */
 	public EReference getSemester_Course_Course() {
 		return (EReference) semester_CourseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSemester_Course_Fall_or_spring() {
+		return (EAttribute) semester_CourseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -326,6 +393,51 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getProgram_course() {
+		return program_courseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProgram_course_Course() {
+		return (EReference) program_courseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgram_course_Fall_or_spring() {
+		return (EAttribute) program_courseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgram_course_Mandatory() {
+		return (EAttribute) program_courseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getFall_or_spring() {
+		return fall_or_springEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getCalendar() {
 		return calendarEDataType;
 	}
@@ -337,6 +449,24 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 */
 	public EDataType getcourse_code() {
 		return course_codeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getSemester_credits() {
+		return semester_creditsEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getProgram_credits() {
+		return program_creditsEDataType;
 	}
 
 	/**
@@ -371,19 +501,23 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		programEClass = createEClass(PROGRAM);
 		createEAttribute(programEClass, PROGRAM__NAME);
 		createEReference(programEClass, PROGRAM__SPECIALIZATION);
-		createEReference(programEClass, PROGRAM__COURSE);
+		createEReference(programEClass, PROGRAM__PROGRAM_COURSE);
+		createEAttribute(programEClass, PROGRAM__CREDITS);
 
 		specializationEClass = createEClass(SPECIALIZATION);
 		createEAttribute(specializationEClass, SPECIALIZATION__NAME);
 		createEReference(specializationEClass, SPECIALIZATION__SEMESTER);
+		createEReference(specializationEClass, SPECIALIZATION__SPECIALIZATION);
 
 		semesterEClass = createEClass(SEMESTER);
 		createEAttribute(semesterEClass, SEMESTER__NUMBER);
 		createEReference(semesterEClass, SEMESTER__SEMESTER_COURSE);
+		createEAttribute(semesterEClass, SEMESTER__CREDITS);
 
 		semester_CourseEClass = createEClass(SEMESTER_COURSE);
 		createEAttribute(semester_CourseEClass, SEMESTER_COURSE__MANDATORY);
 		createEReference(semester_CourseEClass, SEMESTER_COURSE__COURSE);
+		createEAttribute(semester_CourseEClass, SEMESTER_COURSE__FALL_OR_SPRING);
 
 		courseEClass = createEClass(COURSE);
 		createEAttribute(courseEClass, COURSE__NAME);
@@ -392,9 +526,19 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		createEAttribute(courseEClass, COURSE__START_DATE);
 		createEAttribute(courseEClass, COURSE__EXAM_DATE);
 
+		program_courseEClass = createEClass(PROGRAM_COURSE);
+		createEReference(program_courseEClass, PROGRAM_COURSE__COURSE);
+		createEAttribute(program_courseEClass, PROGRAM_COURSE__FALL_OR_SPRING);
+		createEAttribute(program_courseEClass, PROGRAM_COURSE__MANDATORY);
+
+		// Create enums
+		fall_or_springEEnum = createEEnum(FALL_OR_SPRING);
+
 		// Create data types
 		calendarEDataType = createEDataType(CALENDAR);
 		course_codeEDataType = createEDataType(COURSE_CODE);
+		semester_creditsEDataType = createEDataType(SEMESTER_CREDITS);
+		program_creditsEDataType = createEDataType(PROGRAM_CREDITS);
 	}
 
 	/**
@@ -434,9 +578,11 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		initEReference(getProgram_Specialization(), this.getSpecialization(), null, "specialization", null, 0, -1,
 				Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgram_Course(), this.getCourse(), null, "course", null, 0, -1, Program.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getProgram_Program_course(), this.getProgram_course(), null, "program_course", null, 0, -1,
+				Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgram_Credits(), this.getProgram_credits(), "Credits", null, 0, 1, Program.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -444,6 +590,9 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecialization_Semester(), this.getSemester(), null, "semester", null, 0, -1,
 				Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecialization_Specialization(), this.getSpecialization(), null, "specialization", null, 0,
+				-1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE,
@@ -453,6 +602,8 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		initEReference(getSemester_Semester_course(), this.getSemester_Course(), null, "semester_course", null, 0, -1,
 				Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_Credits(), this.getSemester_credits(), "Credits", null, 0, 1, Semester.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semester_CourseEClass, Semester_Course.class, "Semester_Course", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -462,6 +613,9 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		initEReference(getSemester_Course_Course(), this.getCourse(), null, "course", null, 0, -1,
 				Semester_Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_Course_Fall_or_spring(), this.getFall_or_spring(), "Fall_or_spring", null, 0, 1,
+				Semester_Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Course.class, !IS_TRANSIENT,
@@ -475,9 +629,30 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		initEAttribute(getCourse_ExamDate(), this.getCalendar(), "ExamDate", null, 0, 1, Course.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(program_courseEClass, Program_course.class, "Program_course", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProgram_course_Course(), this.getCourse(), null, "course", null, 0, -1, Program_course.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgram_course_Fall_or_spring(), this.getFall_or_spring(), "Fall_or_spring", null, 0, 1,
+				Program_course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgram_course_Mandatory(), ecorePackage.getEBoolean(), "Mandatory", null, 0, 1,
+				Program_course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(fall_or_springEEnum, Fall_or_spring.class, "Fall_or_spring");
+		addEEnumLiteral(fall_or_springEEnum, Fall_or_spring.FALL);
+		addEEnumLiteral(fall_or_springEEnum, Fall_or_spring.SPRING);
+
 		// Initialize data types
 		initEDataType(calendarEDataType, Calendar.class, "Calendar", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(course_codeEDataType, String.class, "course_code", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(semester_creditsEDataType, int.class, "Semester_credits", IS_SERIALIZABLE,
+				!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(program_creditsEDataType, int.class, "Program_credits", IS_SERIALIZABLE,
+				!IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -509,6 +684,8 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation(course_codeEDataType, source, new String[] { "maxLength", "7" });
+		addAnnotation(semester_creditsEDataType, source, new String[] { "minInclusive", "30" });
+		addAnnotation(program_creditsEDataType, source, new String[] { "minExclusive", "30" });
 	}
 
 } //TDT4250_asssignment1_2PackageImpl

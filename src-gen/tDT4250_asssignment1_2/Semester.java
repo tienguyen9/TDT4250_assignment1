@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.Semester#getNumber <em>Number</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.Semester#getSemester_course <em>Semester course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.Semester#getCredits <em>Credits</em>}</li>
  * </ul>
  *
  * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getSemester()
@@ -57,5 +58,27 @@ public interface Semester extends EObject {
 	 * @generated
 	 */
 	EList<Semester_Course> getSemester_course();
+
+	/**
+	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Credits</em>' attribute.
+	 * @see #setCredits(int)
+	 * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getSemester_Credits()
+	 * @model dataType="tDT4250_asssignment1_2.Semester_credits"
+	 * @generated
+	 */
+	int getCredits();
+
+	/**
+	 * Sets the value of the '{@link tDT4250_asssignment1_2.Semester#getCredits <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Credits</em>' attribute.
+	 * @see #getCredits()
+	 * @generated
+	 */
+	void setCredits(int value);
 
 } // Semester

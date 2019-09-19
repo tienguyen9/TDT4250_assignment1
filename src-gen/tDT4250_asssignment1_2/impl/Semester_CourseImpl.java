@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import tDT4250_asssignment1_2.Course;
+import tDT4250_asssignment1_2.Fall_or_spring;
 import tDT4250_asssignment1_2.Semester_Course;
 import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
 
@@ -29,6 +30,7 @@ import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.impl.Semester_CourseImpl#isMandatory <em>Mandatory</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.impl.Semester_CourseImpl#getCourse <em>Course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.impl.Semester_CourseImpl#getFall_or_spring <em>Fall or spring</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +65,26 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<Course> course;
+
+	/**
+	 * The default value of the '{@link #getFall_or_spring() <em>Fall or spring</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFall_or_spring()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Fall_or_spring FALL_OR_SPRING_EDEFAULT = Fall_or_spring.FALL;
+
+	/**
+	 * The cached value of the '{@link #getFall_or_spring() <em>Fall or spring</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFall_or_spring()
+	 * @generated
+	 * @ordered
+	 */
+	protected Fall_or_spring fall_or_spring = FALL_OR_SPRING_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +145,28 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Fall_or_spring getFall_or_spring() {
+		return fall_or_spring;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFall_or_spring(Fall_or_spring newFall_or_spring) {
+		Fall_or_spring oldFall_or_spring = fall_or_spring;
+		fall_or_spring = newFall_or_spring == null ? FALL_OR_SPRING_EDEFAULT : newFall_or_spring;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					TDT4250_asssignment1_2Package.SEMESTER_COURSE__FALL_OR_SPRING, oldFall_or_spring, fall_or_spring));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -130,6 +174,8 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 			return isMandatory();
 		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__COURSE:
 			return getCourse();
+		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__FALL_OR_SPRING:
+			return getFall_or_spring();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +196,9 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 			getCourse().clear();
 			getCourse().addAll((Collection<? extends Course>) newValue);
 			return;
+		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__FALL_OR_SPRING:
+			setFall_or_spring((Fall_or_spring) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,6 +217,9 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__COURSE:
 			getCourse().clear();
 			return;
+		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__FALL_OR_SPRING:
+			setFall_or_spring(FALL_OR_SPRING_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +236,8 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 			return mandatory != MANDATORY_EDEFAULT;
 		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__COURSE:
 			return course != null && !course.isEmpty();
+		case TDT4250_asssignment1_2Package.SEMESTER_COURSE__FALL_OR_SPRING:
+			return fall_or_spring != FALL_OR_SPRING_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -201,6 +255,8 @@ public class Semester_CourseImpl extends MinimalEObjectImpl.Container implements
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Mandatory: ");
 		result.append(mandatory);
+		result.append(", Fall_or_spring: ");
+		result.append(fall_or_spring);
 		result.append(')');
 		return result.toString();
 	}

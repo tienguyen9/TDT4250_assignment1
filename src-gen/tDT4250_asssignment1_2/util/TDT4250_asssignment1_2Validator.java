@@ -98,10 +98,18 @@ public class TDT4250_asssignment1_2Validator extends EObjectValidator {
 			return validateSemester_Course((Semester_Course) value, diagnostics, context);
 		case TDT4250_asssignment1_2Package.COURSE:
 			return validateCourse((Course) value, diagnostics, context);
+		case TDT4250_asssignment1_2Package.PROGRAM_COURSE:
+			return validateProgram_course((Program_course) value, diagnostics, context);
+		case TDT4250_asssignment1_2Package.FALL_OR_SPRING:
+			return validateFall_or_spring((Fall_or_spring) value, diagnostics, context);
 		case TDT4250_asssignment1_2Package.CALENDAR:
 			return validateCalendar((Calendar) value, diagnostics, context);
 		case TDT4250_asssignment1_2Package.COURSE_CODE:
 			return validatecourse_code((String) value, diagnostics, context);
+		case TDT4250_asssignment1_2Package.SEMESTER_CREDITS:
+			return validateSemester_credits((Integer) value, diagnostics, context);
+		case TDT4250_asssignment1_2Package.PROGRAM_CREDITS:
+			return validateProgram_credits((Integer) value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -147,8 +155,7 @@ public class TDT4250_asssignment1_2Validator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		// @generated NOT
-		if (!isCharAndInt(program.getName())) {
+		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
@@ -161,8 +168,9 @@ public class TDT4250_asssignment1_2Validator extends EObjectValidator {
 	}
 
 	public boolean isCharAndInt(String name) {
-	    return name.matches("[a-zA-Z0-9]+");
+		return name.matches("[a-zA-Z0-9]+");
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,6 +214,26 @@ public class TDT4250_asssignment1_2Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateProgram_course(Program_course program_course, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(program_course, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFall_or_spring(Fall_or_spring fall_or_spring, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateCalendar(Calendar calendar, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
@@ -233,6 +261,74 @@ public class TDT4250_asssignment1_2Validator extends EObjectValidator {
 		if (!result && diagnostics != null)
 			reportMaxLengthViolation(TDT4250_asssignment1_2Package.Literals.COURSE_CODE, course_code, length, 7,
 					diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_credits(int semester_credits, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		boolean result = validateSemester_credits_Min(semester_credits, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateSemester_credits_Min
+	 */
+	public static final int SEMESTER_CREDITS__MIN__VALUE = 30;
+
+	/**
+	 * Validates the Min constraint of '<em>Semester credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_credits_Min(int semester_credits, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		boolean result = semester_credits >= SEMESTER_CREDITS__MIN__VALUE;
+		if (!result && diagnostics != null)
+			reportMinViolation(TDT4250_asssignment1_2Package.Literals.SEMESTER_CREDITS, semester_credits,
+					SEMESTER_CREDITS__MIN__VALUE, true, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgram_credits(int program_credits, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		boolean result = validateProgram_credits_Min(program_credits, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateProgram_credits_Min
+	 */
+	public static final int PROGRAM_CREDITS__MIN__VALUE = 30;
+
+	/**
+	 * Validates the Min constraint of '<em>Program credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgram_credits_Min(int program_credits, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		boolean result = program_credits > PROGRAM_CREDITS__MIN__VALUE;
+		if (!result && diagnostics != null)
+			reportMinViolation(TDT4250_asssignment1_2Package.Literals.PROGRAM_CREDITS, program_credits,
+					PROGRAM_CREDITS__MIN__VALUE, false, diagnostics, context);
 		return result;
 	}
 

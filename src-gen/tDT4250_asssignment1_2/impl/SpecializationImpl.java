@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import tDT4250_asssignment1_2.Semester;
@@ -32,6 +33,7 @@ import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.impl.SpecializationImpl#getName <em>Name</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.impl.SpecializationImpl#getSemester <em>Semester</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.impl.SpecializationImpl#getSpecialization <em>Specialization</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Semester> semester;
+
+	/**
+	 * The cached value of the '{@link #getSpecialization() <em>Specialization</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecialization()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Specialization> specialization;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +138,19 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Specialization> getSpecialization() {
+		if (specialization == null) {
+			specialization = new EObjectResolvingEList<Specialization>(Specialization.class, this,
+					TDT4250_asssignment1_2Package.SPECIALIZATION__SPECIALIZATION);
+		}
+		return specialization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -147,6 +172,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			return getName();
 		case TDT4250_asssignment1_2Package.SPECIALIZATION__SEMESTER:
 			return getSemester();
+		case TDT4250_asssignment1_2Package.SPECIALIZATION__SPECIALIZATION:
+			return getSpecialization();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +194,10 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			getSemester().clear();
 			getSemester().addAll((Collection<? extends Semester>) newValue);
 			return;
+		case TDT4250_asssignment1_2Package.SPECIALIZATION__SPECIALIZATION:
+			getSpecialization().clear();
+			getSpecialization().addAll((Collection<? extends Specialization>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,6 +216,9 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 		case TDT4250_asssignment1_2Package.SPECIALIZATION__SEMESTER:
 			getSemester().clear();
 			return;
+		case TDT4250_asssignment1_2Package.SPECIALIZATION__SPECIALIZATION:
+			getSpecialization().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,6 +235,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TDT4250_asssignment1_2Package.SPECIALIZATION__SEMESTER:
 			return semester != null && !semester.isEmpty();
+		case TDT4250_asssignment1_2Package.SPECIALIZATION__SPECIALIZATION:
+			return specialization != null && !specialization.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

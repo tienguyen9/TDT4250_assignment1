@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.Specialization#getName <em>Name</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.Specialization#getSemester <em>Semester</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.Specialization#getSpecialization <em>Specialization</em>}</li>
  * </ul>
  *
  * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getSpecialization()
@@ -57,5 +58,17 @@ public interface Specialization extends EObject {
 	 * @generated
 	 */
 	EList<Semester> getSemester();
+
+	/**
+	 * Returns the value of the '<em><b>Specialization</b></em>' reference list.
+	 * The list contents are of type {@link tDT4250_asssignment1_2.Specialization}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specialization</em>' reference list.
+	 * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getSpecialization_Specialization()
+	 * @model
+	 * @generated
+	 */
+	EList<Specialization> getSpecialization();
 
 } // Specialization

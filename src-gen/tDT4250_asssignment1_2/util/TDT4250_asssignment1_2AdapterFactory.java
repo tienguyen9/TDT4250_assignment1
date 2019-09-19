@@ -92,6 +92,11 @@ public class TDT4250_asssignment1_2AdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseProgram_course(Program_course object) {
+			return createProgram_courseAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -177,6 +182,20 @@ public class TDT4250_asssignment1_2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCourseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tDT4250_asssignment1_2.Program_course <em>Program course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tDT4250_asssignment1_2.Program_course
+	 * @generated
+	 */
+	public Adapter createProgram_courseAdapter() {
 		return null;
 	}
 

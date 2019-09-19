@@ -69,6 +69,8 @@ public class TDT4250_asssignment1_2FactoryImpl extends EFactoryImpl implements T
 			return createSemester_Course();
 		case TDT4250_asssignment1_2Package.COURSE:
 			return createCourse();
+		case TDT4250_asssignment1_2Package.PROGRAM_COURSE:
+			return createProgram_course();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,10 +84,16 @@ public class TDT4250_asssignment1_2FactoryImpl extends EFactoryImpl implements T
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+		case TDT4250_asssignment1_2Package.FALL_OR_SPRING:
+			return createFall_or_springFromString(eDataType, initialValue);
 		case TDT4250_asssignment1_2Package.CALENDAR:
 			return createCalendarFromString(eDataType, initialValue);
 		case TDT4250_asssignment1_2Package.COURSE_CODE:
 			return createcourse_codeFromString(eDataType, initialValue);
+		case TDT4250_asssignment1_2Package.SEMESTER_CREDITS:
+			return createSemester_creditsFromString(eDataType, initialValue);
+		case TDT4250_asssignment1_2Package.PROGRAM_CREDITS:
+			return createProgram_creditsFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -99,10 +107,16 @@ public class TDT4250_asssignment1_2FactoryImpl extends EFactoryImpl implements T
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+		case TDT4250_asssignment1_2Package.FALL_OR_SPRING:
+			return convertFall_or_springToString(eDataType, instanceValue);
 		case TDT4250_asssignment1_2Package.CALENDAR:
 			return convertCalendarToString(eDataType, instanceValue);
 		case TDT4250_asssignment1_2Package.COURSE_CODE:
 			return convertcourse_codeToString(eDataType, instanceValue);
+		case TDT4250_asssignment1_2Package.SEMESTER_CREDITS:
+			return convertSemester_creditsToString(eDataType, instanceValue);
+		case TDT4250_asssignment1_2Package.PROGRAM_CREDITS:
+			return convertProgram_creditsToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -163,6 +177,38 @@ public class TDT4250_asssignment1_2FactoryImpl extends EFactoryImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Program_course createProgram_course() {
+		Program_courseImpl program_course = new Program_courseImpl();
+		return program_course;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Fall_or_spring createFall_or_springFromString(EDataType eDataType, String initialValue) {
+		Fall_or_spring result = Fall_or_spring.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFall_or_springToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Calendar createCalendarFromString(EDataType eDataType, String initialValue) {
 		return (Calendar) super.createFromString(eDataType, initialValue);
 	}
@@ -191,6 +237,42 @@ public class TDT4250_asssignment1_2FactoryImpl extends EFactoryImpl implements T
 	 * @generated
 	 */
 	public String convertcourse_codeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer createSemester_creditsFromString(EDataType eDataType, String initialValue) {
+		return (Integer) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSemester_creditsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer createProgram_creditsFromString(EDataType eDataType, String initialValue) {
+		return (Integer) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertProgram_creditsToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

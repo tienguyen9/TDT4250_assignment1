@@ -17,9 +17,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import tDT4250_asssignment1_2.Course;
 import tDT4250_asssignment1_2.Program;
+import tDT4250_asssignment1_2.Program_course;
 import tDT4250_asssignment1_2.Specialization;
 import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
 
@@ -33,7 +32,8 @@ import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
  * <ul>
  *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getName <em>Name</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getSpecialization <em>Specialization</em>}</li>
- *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getCourse <em>Course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getProgram_course <em>Program course</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getCredits <em>Credits</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,14 +70,34 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	protected EList<Specialization> specialization;
 
 	/**
-	 * The cached value of the '{@link #getCourse() <em>Course</em>}' containment reference list.
+	 * The cached value of the '{@link #getProgram_course() <em>Program course</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCourse()
+	 * @see #getProgram_course()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Course> course;
+	protected EList<Program_course> program_course;
+
+	/**
+	 * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int CREDITS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected int credits = CREDITS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,12 +158,34 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Course> getCourse() {
-		if (course == null) {
-			course = new EObjectContainmentEList<Course>(Course.class, this,
-					TDT4250_asssignment1_2Package.PROGRAM__COURSE);
+	public EList<Program_course> getProgram_course() {
+		if (program_course == null) {
+			program_course = new EObjectContainmentEList<Program_course>(Program_course.class, this,
+					TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE);
 		}
-		return course;
+		return program_course;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getCredits() {
+		return credits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCredits(int newCredits) {
+		int oldCredits = credits;
+		credits = newCredits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TDT4250_asssignment1_2Package.PROGRAM__CREDITS,
+					oldCredits, credits));
 	}
 
 	/**
@@ -156,8 +198,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 		switch (featureID) {
 		case TDT4250_asssignment1_2Package.PROGRAM__SPECIALIZATION:
 			return ((InternalEList<?>) getSpecialization()).basicRemove(otherEnd, msgs);
-		case TDT4250_asssignment1_2Package.PROGRAM__COURSE:
-			return ((InternalEList<?>) getCourse()).basicRemove(otherEnd, msgs);
+		case TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE:
+			return ((InternalEList<?>) getProgram_course()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -174,8 +216,10 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			return getName();
 		case TDT4250_asssignment1_2Package.PROGRAM__SPECIALIZATION:
 			return getSpecialization();
-		case TDT4250_asssignment1_2Package.PROGRAM__COURSE:
-			return getCourse();
+		case TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE:
+			return getProgram_course();
+		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
+			return getCredits();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -196,9 +240,12 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			getSpecialization().clear();
 			getSpecialization().addAll((Collection<? extends Specialization>) newValue);
 			return;
-		case TDT4250_asssignment1_2Package.PROGRAM__COURSE:
-			getCourse().clear();
-			getCourse().addAll((Collection<? extends Course>) newValue);
+		case TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE:
+			getProgram_course().clear();
+			getProgram_course().addAll((Collection<? extends Program_course>) newValue);
+			return;
+		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
+			setCredits((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,8 +265,11 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 		case TDT4250_asssignment1_2Package.PROGRAM__SPECIALIZATION:
 			getSpecialization().clear();
 			return;
-		case TDT4250_asssignment1_2Package.PROGRAM__COURSE:
-			getCourse().clear();
+		case TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE:
+			getProgram_course().clear();
+			return;
+		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
+			setCredits(CREDITS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -237,8 +287,10 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case TDT4250_asssignment1_2Package.PROGRAM__SPECIALIZATION:
 			return specialization != null && !specialization.isEmpty();
-		case TDT4250_asssignment1_2Package.PROGRAM__COURSE:
-			return course != null && !course.isEmpty();
+		case TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE:
+			return program_course != null && !program_course.isEmpty();
+		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
+			return credits != CREDITS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -256,6 +308,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
+		result.append(", Credits: ");
+		result.append(credits);
 		result.append(')');
 		return result.toString();
 	}

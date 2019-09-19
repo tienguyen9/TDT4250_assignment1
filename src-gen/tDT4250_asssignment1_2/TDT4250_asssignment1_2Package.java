@@ -5,6 +5,7 @@ package tDT4250_asssignment1_2;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -86,13 +87,22 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	int PROGRAM__SPECIALIZATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Course</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Program course</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM__COURSE = 2;
+	int PROGRAM__PROGRAM_COURSE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Credits</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM__CREDITS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Program</em>' class.
@@ -101,7 +111,7 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM_FEATURE_COUNT = 3;
+	int PROGRAM_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Program</em>' class.
@@ -141,13 +151,22 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	int SPECIALIZATION__SEMESTER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Specialization</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__SPECIALIZATION = 2;
+
+	/**
 	 * The number of structural features of the '<em>Specialization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_FEATURE_COUNT = 2;
+	int SPECIALIZATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Specialization</em>' class.
@@ -187,13 +206,22 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	int SEMESTER__SEMESTER_COURSE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Credits</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__CREDITS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_FEATURE_COUNT = 2;
+	int SEMESTER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Semester</em>' class.
@@ -233,13 +261,22 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	int SEMESTER_COURSE__COURSE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Fall or spring</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER_COURSE__FALL_OR_SPRING = 2;
+
+	/**
 	 * The number of structural features of the '<em>Semester Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_COURSE_FEATURE_COUNT = 2;
+	int SEMESTER_COURSE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Semester Course</em>' class.
@@ -324,6 +361,71 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	int COURSE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link tDT4250_asssignment1_2.impl.Program_courseImpl <em>Program course</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tDT4250_asssignment1_2.impl.Program_courseImpl
+	 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getProgram_course()
+	 * @generated
+	 */
+	int PROGRAM_COURSE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Course</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_COURSE__COURSE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Fall or spring</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_COURSE__FALL_OR_SPRING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_COURSE__MANDATORY = 2;
+
+	/**
+	 * The number of structural features of the '<em>Program course</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_COURSE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Program course</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_COURSE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tDT4250_asssignment1_2.Fall_or_spring <em>Fall or spring</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tDT4250_asssignment1_2.Fall_or_spring
+	 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getFall_or_spring()
+	 * @generated
+	 */
+	int FALL_OR_SPRING = 6;
+
+	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -331,7 +433,7 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getCalendar()
 	 * @generated
 	 */
-	int CALENDAR = 5;
+	int CALENDAR = 7;
 
 	/**
 	 * The meta object id for the '<em>course code</em>' data type.
@@ -341,7 +443,25 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getcourse_code()
 	 * @generated
 	 */
-	int COURSE_CODE = 6;
+	int COURSE_CODE = 8;
+
+	/**
+	 * The meta object id for the '<em>Semester credits</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getSemester_credits()
+	 * @generated
+	 */
+	int SEMESTER_CREDITS = 9;
+
+	/**
+	 * The meta object id for the '<em>Program credits</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getProgram_credits()
+	 * @generated
+	 */
+	int PROGRAM_CREDITS = 10;
 
 	/**
 	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Program <em>Program</em>}'.
@@ -376,15 +496,26 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	EReference getProgram_Specialization();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tDT4250_asssignment1_2.Program#getCourse <em>Course</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tDT4250_asssignment1_2.Program#getProgram_course <em>Program course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Course</em>'.
-	 * @see tDT4250_asssignment1_2.Program#getCourse()
+	 * @return the meta object for the containment reference list '<em>Program course</em>'.
+	 * @see tDT4250_asssignment1_2.Program#getProgram_course()
 	 * @see #getProgram()
 	 * @generated
 	 */
-	EReference getProgram_Course();
+	EReference getProgram_Program_course();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tDT4250_asssignment1_2.Program#getCredits <em>Credits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Credits</em>'.
+	 * @see tDT4250_asssignment1_2.Program#getCredits()
+	 * @see #getProgram()
+	 * @generated
+	 */
+	EAttribute getProgram_Credits();
 
 	/**
 	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Specialization <em>Specialization</em>}'.
@@ -419,6 +550,17 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	EReference getSpecialization_Semester();
 
 	/**
+	 * Returns the meta object for the reference list '{@link tDT4250_asssignment1_2.Specialization#getSpecialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Specialization</em>'.
+	 * @see tDT4250_asssignment1_2.Specialization#getSpecialization()
+	 * @see #getSpecialization()
+	 * @generated
+	 */
+	EReference getSpecialization_Specialization();
+
+	/**
 	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Semester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -451,6 +593,17 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	EReference getSemester_Semester_course();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tDT4250_asssignment1_2.Semester#getCredits <em>Credits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Credits</em>'.
+	 * @see tDT4250_asssignment1_2.Semester#getCredits()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_Credits();
+
+	/**
 	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Semester_Course <em>Semester Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,6 +634,17 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getSemester_Course_Course();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tDT4250_asssignment1_2.Semester_Course#getFall_or_spring <em>Fall or spring</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fall or spring</em>'.
+	 * @see tDT4250_asssignment1_2.Semester_Course#getFall_or_spring()
+	 * @see #getSemester_Course()
+	 * @generated
+	 */
+	EAttribute getSemester_Course_Fall_or_spring();
 
 	/**
 	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Course <em>Course</em>}'.
@@ -548,6 +712,59 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	EAttribute getCourse_ExamDate();
 
 	/**
+	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Program_course <em>Program course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Program course</em>'.
+	 * @see tDT4250_asssignment1_2.Program_course
+	 * @generated
+	 */
+	EClass getProgram_course();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link tDT4250_asssignment1_2.Program_course#getCourse <em>Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Course</em>'.
+	 * @see tDT4250_asssignment1_2.Program_course#getCourse()
+	 * @see #getProgram_course()
+	 * @generated
+	 */
+	EReference getProgram_course_Course();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tDT4250_asssignment1_2.Program_course#getFall_or_spring <em>Fall or spring</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fall or spring</em>'.
+	 * @see tDT4250_asssignment1_2.Program_course#getFall_or_spring()
+	 * @see #getProgram_course()
+	 * @generated
+	 */
+	EAttribute getProgram_course_Fall_or_spring();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tDT4250_asssignment1_2.Program_course#isMandatory <em>Mandatory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mandatory</em>'.
+	 * @see tDT4250_asssignment1_2.Program_course#isMandatory()
+	 * @see #getProgram_course()
+	 * @generated
+	 */
+	EAttribute getProgram_course_Mandatory();
+
+	/**
+	 * Returns the meta object for enum '{@link tDT4250_asssignment1_2.Fall_or_spring <em>Fall or spring</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Fall or spring</em>'.
+	 * @see tDT4250_asssignment1_2.Fall_or_spring
+	 * @generated
+	 */
+	EEnum getFall_or_spring();
+
+	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -569,6 +786,28 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	 * @generated
 	 */
 	EDataType getcourse_code();
+
+	/**
+	 * Returns the meta object for data type '<em>Semester credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Semester credits</em>'.
+	 * @model instanceClass="int"
+	 *        extendedMetaData="minInclusive='30'"
+	 * @generated
+	 */
+	EDataType getSemester_credits();
+
+	/**
+	 * Returns the meta object for data type '<em>Program credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Program credits</em>'.
+	 * @model instanceClass="int"
+	 *        extendedMetaData="minExclusive='30'"
+	 * @generated
+	 */
+	EDataType getProgram_credits();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -620,12 +859,20 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		EReference PROGRAM__SPECIALIZATION = eINSTANCE.getProgram_Specialization();
 
 		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Program course</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAM__COURSE = eINSTANCE.getProgram_Course();
+		EReference PROGRAM__PROGRAM_COURSE = eINSTANCE.getProgram_Program_course();
+
+		/**
+		 * The meta object literal for the '<em><b>Credits</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAM__CREDITS = eINSTANCE.getProgram_Credits();
 
 		/**
 		 * The meta object literal for the '{@link tDT4250_asssignment1_2.impl.SpecializationImpl <em>Specialization</em>}' class.
@@ -654,6 +901,14 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		EReference SPECIALIZATION__SEMESTER = eINSTANCE.getSpecialization_Semester();
 
 		/**
+		 * The meta object literal for the '<em><b>Specialization</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATION__SPECIALIZATION = eINSTANCE.getSpecialization_Specialization();
+
+		/**
 		 * The meta object literal for the '{@link tDT4250_asssignment1_2.impl.SemesterImpl <em>Semester</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -680,6 +935,14 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		EReference SEMESTER__SEMESTER_COURSE = eINSTANCE.getSemester_Semester_course();
 
 		/**
+		 * The meta object literal for the '<em><b>Credits</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__CREDITS = eINSTANCE.getSemester_Credits();
+
+		/**
 		 * The meta object literal for the '{@link tDT4250_asssignment1_2.impl.Semester_CourseImpl <em>Semester Course</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -704,6 +967,14 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		 * @generated
 		 */
 		EReference SEMESTER_COURSE__COURSE = eINSTANCE.getSemester_Course_Course();
+
+		/**
+		 * The meta object literal for the '<em><b>Fall or spring</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER_COURSE__FALL_OR_SPRING = eINSTANCE.getSemester_Course_Fall_or_spring();
 
 		/**
 		 * The meta object literal for the '{@link tDT4250_asssignment1_2.impl.CourseImpl <em>Course</em>}' class.
@@ -756,6 +1027,50 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		EAttribute COURSE__EXAM_DATE = eINSTANCE.getCourse_ExamDate();
 
 		/**
+		 * The meta object literal for the '{@link tDT4250_asssignment1_2.impl.Program_courseImpl <em>Program course</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tDT4250_asssignment1_2.impl.Program_courseImpl
+		 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getProgram_course()
+		 * @generated
+		 */
+		EClass PROGRAM_COURSE = eINSTANCE.getProgram_course();
+
+		/**
+		 * The meta object literal for the '<em><b>Course</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAM_COURSE__COURSE = eINSTANCE.getProgram_course_Course();
+
+		/**
+		 * The meta object literal for the '<em><b>Fall or spring</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAM_COURSE__FALL_OR_SPRING = eINSTANCE.getProgram_course_Fall_or_spring();
+
+		/**
+		 * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAM_COURSE__MANDATORY = eINSTANCE.getProgram_course_Mandatory();
+
+		/**
+		 * The meta object literal for the '{@link tDT4250_asssignment1_2.Fall_or_spring <em>Fall or spring</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tDT4250_asssignment1_2.Fall_or_spring
+		 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getFall_or_spring()
+		 * @generated
+		 */
+		EEnum FALL_OR_SPRING = eINSTANCE.getFall_or_spring();
+
+		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -774,6 +1089,24 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		 * @generated
 		 */
 		EDataType COURSE_CODE = eINSTANCE.getcourse_code();
+
+		/**
+		 * The meta object literal for the '<em>Semester credits</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getSemester_credits()
+		 * @generated
+		 */
+		EDataType SEMESTER_CREDITS = eINSTANCE.getSemester_credits();
+
+		/**
+		 * The meta object literal for the '<em>Program credits</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tDT4250_asssignment1_2.impl.TDT4250_asssignment1_2PackageImpl#getProgram_credits()
+		 * @generated
+		 */
+		EDataType PROGRAM_CREDITS = eINSTANCE.getProgram_credits();
 
 	}
 

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: TDT4250_asssignment1_2;singleton:=true
+Bundle-SymbolicName: TDT4250_assignment1;singleton:=true
 Automatic-Module-Name: TDT4250_asssignment1_2
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
