@@ -12,6 +12,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="program_course" upperBound="-1"
         eType="#//Program_course" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Credits" eType="#//Program_credits"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semester" upperBound="-1"
+        eType="#//Semester" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

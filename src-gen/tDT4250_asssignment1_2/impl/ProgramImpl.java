@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import tDT4250_asssignment1_2.Program;
 import tDT4250_asssignment1_2.Program_course;
+import tDT4250_asssignment1_2.Semester;
 import tDT4250_asssignment1_2.Specialization;
 import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
 
@@ -34,6 +35,7 @@ import tDT4250_asssignment1_2.TDT4250_asssignment1_2Package;
  *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getSpecialization <em>Specialization</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getProgram_course <em>Program course</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getCredits <em>Credits</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.impl.ProgramImpl#getSemester <em>Semester</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,6 +100,16 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * @ordered
 	 */
 	protected int credits = CREDITS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemester()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Semester> semester;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,6 +205,19 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Semester> getSemester() {
+		if (semester == null) {
+			semester = new EObjectContainmentEList<Semester>(Semester.class, this,
+					TDT4250_asssignment1_2Package.PROGRAM__SEMESTER);
+		}
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -200,6 +225,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			return ((InternalEList<?>) getSpecialization()).basicRemove(otherEnd, msgs);
 		case TDT4250_asssignment1_2Package.PROGRAM__PROGRAM_COURSE:
 			return ((InternalEList<?>) getProgram_course()).basicRemove(otherEnd, msgs);
+		case TDT4250_asssignment1_2Package.PROGRAM__SEMESTER:
+			return ((InternalEList<?>) getSemester()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -220,6 +247,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			return getProgram_course();
 		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
 			return getCredits();
+		case TDT4250_asssignment1_2Package.PROGRAM__SEMESTER:
+			return getSemester();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,6 +276,10 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
 			setCredits((Integer) newValue);
 			return;
+		case TDT4250_asssignment1_2Package.PROGRAM__SEMESTER:
+			getSemester().clear();
+			getSemester().addAll((Collection<? extends Semester>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -271,6 +304,9 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
 			setCredits(CREDITS_EDEFAULT);
 			return;
+		case TDT4250_asssignment1_2Package.PROGRAM__SEMESTER:
+			getSemester().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,6 +327,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 			return program_course != null && !program_course.isEmpty();
 		case TDT4250_asssignment1_2Package.PROGRAM__CREDITS:
 			return credits != CREDITS_EDEFAULT;
+		case TDT4250_asssignment1_2Package.PROGRAM__SEMESTER:
+			return semester != null && !semester.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

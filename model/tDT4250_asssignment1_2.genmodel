@@ -22,6 +22,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference tDT4250_asssignment1_2.ecore#//Program/specialization"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference tDT4250_asssignment1_2.ecore#//Program/program_course"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tDT4250_asssignment1_2.ecore#//Program/Credits"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference tDT4250_asssignment1_2.ecore#//Program/semester"/>
     </genClasses>
     <genClasses ecoreClass="tDT4250_asssignment1_2.ecore#//Specialization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tDT4250_asssignment1_2.ecore#//Specialization/Name"/>

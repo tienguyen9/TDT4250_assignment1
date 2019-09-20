@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tDT4250_asssignment1_2.Program#getSpecialization <em>Specialization</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.Program#getProgram_course <em>Program course</em>}</li>
  *   <li>{@link tDT4250_asssignment1_2.Program#getCredits <em>Credits</em>}</li>
+ *   <li>{@link tDT4250_asssignment1_2.Program#getSemester <em>Semester</em>}</li>
  * </ul>
  *
  * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getProgram()
@@ -93,5 +94,17 @@ public interface Program extends EObject {
 	 * @generated
 	 */
 	void setCredits(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Semester</b></em>' containment reference list.
+	 * The list contents are of type {@link tDT4250_asssignment1_2.Semester}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semester</em>' containment reference list.
+	 * @see tDT4250_asssignment1_2.TDT4250_asssignment1_2Package#getProgram_Semester()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Semester> getSemester();
 
 } // Program

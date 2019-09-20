@@ -231,6 +231,15 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProgram_Semester() {
+		return (EReference) programEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSpecialization() {
 		return specializationEClass;
 	}
@@ -503,6 +512,7 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 		createEReference(programEClass, PROGRAM__SPECIALIZATION);
 		createEReference(programEClass, PROGRAM__PROGRAM_COURSE);
 		createEAttribute(programEClass, PROGRAM__CREDITS);
+		createEReference(programEClass, PROGRAM__SEMESTER);
 
 		specializationEClass = createEClass(SPECIALIZATION);
 		createEAttribute(specializationEClass, SPECIALIZATION__NAME);
@@ -583,6 +593,9 @@ public class TDT4250_asssignment1_2PackageImpl extends EPackageImpl implements T
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProgram_Credits(), this.getProgram_credits(), "Credits", null, 0, 1, Program.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgram_Semester(), this.getSemester(), null, "semester", null, 0, -1, Program.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

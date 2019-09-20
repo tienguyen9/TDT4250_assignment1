@@ -105,13 +105,22 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	int PROGRAM__CREDITS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Semester</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM__SEMESTER = 4;
+
+	/**
 	 * The number of structural features of the '<em>Program</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM_FEATURE_COUNT = 4;
+	int PROGRAM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Program</em>' class.
@@ -518,6 +527,17 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 	EAttribute getProgram_Credits();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link tDT4250_asssignment1_2.Program#getSemester <em>Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Semester</em>'.
+	 * @see tDT4250_asssignment1_2.Program#getSemester()
+	 * @see #getProgram()
+	 * @generated
+	 */
+	EReference getProgram_Semester();
+
+	/**
 	 * Returns the meta object for class '{@link tDT4250_asssignment1_2.Specialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -873,6 +893,14 @@ public interface TDT4250_asssignment1_2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROGRAM__CREDITS = eINSTANCE.getProgram_Credits();
+
+		/**
+		 * The meta object literal for the '<em><b>Semester</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAM__SEMESTER = eINSTANCE.getProgram_Semester();
 
 		/**
 		 * The meta object literal for the '{@link tDT4250_asssignment1_2.impl.SpecializationImpl <em>Specialization</em>}' class.
